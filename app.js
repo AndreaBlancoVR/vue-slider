@@ -38,13 +38,33 @@ const app = new Vue({
     },
     methods: {
         upFn: function(){
-            this.currentIndex --
+            // return (currentIndex > 0 ) ? this.currentIndex -- : currentIndex;
+            // this.currentIndex --
+                if (this.currentIndex == 0 ){
+                    this.currentIndex = 4;
+                }
+                else {
+                    this.currentIndex --
+                }
         },
 
         downFn: function(){
-            this.currentIndex ++
+            // return (currentIndex == this.SLIDES.length - 1) ? this.currentIndex = 0 : currentIndex ++;
+            // this.currentIndex ++
+            if (this.currentIndex == this.SLIDES.length - 1 ){
+                this.currentIndex = 0;
+            }
+            else {
+                this.currentIndex ++
+            }
+        },
+
+        CurrentIndexFn: function(){
+            this.currentIndex = [i]
         },
     }
+    
+
 });
 
 
