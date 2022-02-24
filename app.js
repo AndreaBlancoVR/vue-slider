@@ -36,7 +36,21 @@ const app = new Vue({
             },    
         ],
     },
+    methods: {
+        upFn: function(){
+            this.currentIndex --
+        },
+
+        downFn: function(){
+            this.currentIndex ++
+        },
+    }
 });
+
+
+
+
+
 
 
 // const liArr = []

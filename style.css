@@ -74,7 +74,7 @@ ul {
     flex-grow: 1;
     width: calc( (100% / 12) * 2);
     height: 100%;
-    background-color: darkkhaki;
+    background-color: black;
     position: relative;
 }
 
@@ -86,8 +86,7 @@ ul {
 .side-wrapper > ul li {
     height: calc( 100% / 5 );
     position: relative;
-    border: 1px solid black;
-    background-color: aqua;
+    /* border: 1px solid black; */
 }
 
 .side-wrapper > ul li > .img-container {
@@ -112,20 +111,35 @@ ul {
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-    color: red;
 }
 
-/* .up-arrow {
-    display: block;
+.up-arrow {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    left: 50%;
-    top: 0;
+    width: 35px;
+    height: 35px;
+    top: 5%;
     transform: translateX(-50%) ;
-    padding: 20px;
-    color: red;
-} */
+    /* padding: 20px; */
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+}
+
+.down-arrow {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    bottom: 5%;
+    transform: translateX(-50%) ;
+    /* padding: 20px; */
+    color: black;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+}
 
 
 .item-overlay {

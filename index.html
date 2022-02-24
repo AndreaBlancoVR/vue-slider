@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>CaroselloVUE</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
@@ -21,12 +23,11 @@
 
                 <div class="main-wrapper">
                     <div class="main-item">
-                        <img :src="SLIDES[1].image" alt="">
+                        <img :src="SLIDES[currentIndex].image" alt="">
                     </div>
                     <div class="main-text">
-                        <h3 class="title">Svizzera</h3>
-                        <p class="caption">Lorem ipsum dolor, sit   amet consectetur adipisicing elit. Officiis   fugit animi eveniet inventore placeat itaque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid totam laudantium nihil eum cum voluptate!!
-                        </p>
+                        <h3 class="title">{{SLIDES[currentIndex].title}}</h3>
+                        <p class="caption">{{SLIDES[currentIndex].text}}</p>
                     </div>
                     
                 </div>
@@ -34,48 +35,22 @@
                 <aside class="side-bar"> 
                     <div class="side-wrapper">
                         <ul>
-                            <li v-for="( el, i ) in SLIDES">
+                            <li v-for="( el, i ) in SLIDES" 
+                                :class=" i == currentIndex ? 'active' : '' ">
                                 <img :src="SLIDES[i].image" alt="">
+                                <!-- <img :src="el.image" alt=""> -->
+                                <div :class=" i != currentIndex ? 'item-overlay' : '' "></div>
                             </li>
-                            <!-- <li>
-                                <div>
-                                    <img src="img/01.jpg" alt="">
-                                </div>
-                                <div class="item-overlay"></div>
-                            </li>
-                            <li class="active">
-                                <div>
-                                    <img src="img/02.jpg" alt="">
-                                </div>
-                                <div class=""></div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="img/03.jpg" alt="">
-                                </div>
-                                <div class="item-overlay"></div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="img/04.jpg" alt="">
-                                </div>
-                                <div class="item-overlay"></div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="img/05.jpg" alt="">
-                                </div>
-                                <div class="item-overlay"></div>
-                            </li> -->
+                           
                         </ul>
                         
 
                         <div class="arrows">
-                            <span class="up-arrow">SU
-                                <i class="fa-thin fa-circle-chevron-up"></i>
+                            <span @click="upFn" class="up-arrow">
+                                <i class="fas fa-angle-up"></i>
                             </span>
-                            <span class="down-arrow">GIU
-                                <i class="fa-solid fa-download"></i>  
+                            <span @click="downFn" class="down-arrow">
+                                <i class="fas fa-angle-down"></i>  
                             </span>
                         </div>
                     </div>
