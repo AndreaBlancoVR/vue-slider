@@ -37,6 +37,8 @@
                         <ul>
                             <li v-for="( el, i ) in SLIDES" 
                                 :class=" i == currentIndex ? 'active' : '' ">
+                                
+                                
                                 <img :src="SLIDES[i].image" alt="">
                                 <!-- <img :src="el.image" alt=""> -->
                                 <div :class=" i != currentIndex ? 'item-overlay' : '' "></div>
