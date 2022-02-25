@@ -62,10 +62,23 @@ const app = new Vue({
         CurrentIndexFn: function( i ){
             this.currentIndex = i
         },
-    }
-    
 
+    }   
 });
+
+setInterval( () => {
+    app.downFn( this.currentIndex) ;
+    // if( time < 0 ) {
+    //     clearInterval (clock)
+    //     TIME_EL.classList.add('hidden')
+    //     USER_NUM_WRAPPER.classList.remove('hidden')
+        
+    // } else {
+    // TIME_EL.innerHTML = time
+    // }
+}, 3000);
+
+
 
 
 
