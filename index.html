@@ -18,10 +18,10 @@
 
         <section id="main-section"> 
                         
-            <div class="row-master">
+            <div class="row-master" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
 
 
-                <div class="main-wrapper">
+                <div class="main-wrapper" >
                     <div class="main-item">
                         <img :src="SLIDES[currentIndex].image" alt="">
                     </div>

@@ -2,7 +2,7 @@ const app = new Vue({
     el: '#app',
     data: {
         currentIndex: 0,
-        activeIndex: 0,
+        clock: null,
         SLIDES: [
             {
                 image: 'img/01.jpg',
@@ -41,7 +41,7 @@ const app = new Vue({
             // return (currentIndex > 0 ) ? this.currentIndex -- : currentIndex;
             // this.currentIndex --
                 if (this.currentIndex == 0 ){
-                    this.currentIndex = 4;
+                    this.currentIndex = this.SLIDES.length - 1;
                 }
                 else {
                     this.currentIndex --
@@ -63,11 +63,21 @@ const app = new Vue({
             this.currentIndex = i
         },
 
-    }   
+        stopAutoplay: function() {
+            clearInterval( this.clock);
+        },
+
+        startAutoplay: function() {
+            this.clock = setInterval( this.downFn , 3000)
+        },
+    },
+    mounted() {
+        this.startAutoplay();
+    },
 });
 
-setInterval( () => {
-    app.downFn( this.currentIndex) ;
-}, 3000);
+// setInterval( () => {
+//     app.downFn( this.currentIndex) ;
+// }, 3000);
 
 
