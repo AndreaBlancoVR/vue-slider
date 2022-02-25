@@ -36,7 +36,8 @@
                     <div class="side-wrapper">
                         <ul>
                             <li v-for="( el, i ) in SLIDES" 
-                                :class=" i == currentIndex ? 'active' : '' ">
+                                :class=" i == currentIndex ? 'active' : '' "
+                                @click="CurrentIndexFn( i )">
                                 
                                 
                                 <img :src="SLIDES[i].image" alt="">

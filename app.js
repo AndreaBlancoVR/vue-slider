@@ -59,8 +59,8 @@ const app = new Vue({
             }
         },
 
-        CurrentIndexFn: function(){
-            this.currentIndex = [i]
+        CurrentIndexFn: function( i ){
+            this.currentIndex = i
         },
     }
     
